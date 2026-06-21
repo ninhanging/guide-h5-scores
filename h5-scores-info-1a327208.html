@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.5">
+  <meta name="description" content="比分网专注于体育比分数据收录，提供简洁、可信的赛事结果查询与比对服务。">
+  <title>比分网 · 可信的赛事数据收录</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background: #f7f9fc;
+      font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+      line-height: 1.65;
+      color: #1e293b;
+    }
+
+    .container {
+      max-width: 880px;
+      margin: 0 auto;
+      padding: 3rem 1.8rem 5rem;
+    }
+
+    /* Hero */
+    .hero {
+      margin-bottom: 4rem;
+    }
+
+    .hero h1 {
+      font-size: 2.4rem;
+      font-weight: 600;
+      letter-spacing: -0.02em;
+      color: #0f172a;
+      margin-bottom: 0.5rem;
+      line-height: 1.2;
+    }
+
+    .hero .sub {
+      font-size: 1.1rem;
+      color: #475569;
+      max-width: 660px;
+      margin-top: 0.6rem;
+      border-left: 3px solid #3b82f6;
+      padding-left: 1rem;
+    }
+
+    /* 章节标题 */
+    .section-title {
+      font-size: 1.4rem;
+      font-weight: 600;
+      color: #0f172a;
+      margin: 2.8rem 0 1.2rem;
+      letter-spacing: -0.01em;
+      border-bottom: 1px solid #e2e8f0;
+      padding-bottom: 0.4rem;
+    }
+
+    .section-title:first-of-type {
+      margin-top: 0;
+    }
+
+    /* 卡片网格：优势 / 场景 */
+    .grid-2col {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.6rem;
+      margin-bottom: 2.2rem;
+    }
+
+    .card {
+      background: #ffffff;
+      border-radius: 16px;
+      padding: 1.6rem 1.4rem;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.04), 0 4px 12px rgba(0,0,0,0.02);
+      transition: box-shadow 0.2s ease;
+    }
+
+    .card:hover {
+      box-shadow: 0 4px 16px rgba(0,0,0,0.06);
+    }
+
+    .card h3 {
+      font-size: 1.1rem;
+      font-weight: 600;
+      color: #1e293b;
+      margin-bottom: 0.5rem;
+    }
+
+    .card p {
+      font-size: 0.95rem;
+      color: #475569;
+    }
+
+    .card .tag {
+      display: inline-block;
+      background: #eef2ff;
+      color: #2563eb;
+      font-size: 0.75rem;
+      font-weight: 500;
+      padding: 0.1rem 0.6rem;
+      border-radius: 40px;
+      margin-bottom: 0.4rem;
+    }
+
+    /* 说明区段落 */
+    .desc-paragraph {
+      background: #ffffff;
+      padding: 1.6rem 1.8rem;
+      border-radius: 16px;
+      margin: 1.4rem 0 2rem;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+      font-size: 0.98rem;
+      color: #334155;
+      border-left: 4px solid #e2e8f0;
+    }
+
+    .desc-paragraph strong {
+      color: #0f172a;
+    }
+
+    .desc-paragraph a {
+      color: #2563eb;
+      text-decoration: none;
+      font-weight: 500;
+      border-bottom: 1px solid #b9d1fb;
+    }
+
+    .desc-paragraph a:hover {
+      color: #1d4ed8;
+      border-bottom-color: #2563eb;
+    }
+
+    /* FAQ 摘要 */
+    .faq-block {
+      margin: 2.6rem 0 2rem;
+    }
+
+    .faq-item {
+      padding: 1rem 0;
+      border-bottom: 1px solid #e9edf2;
+    }
+
+    .faq-item:last-child {
+      border-bottom: none;
+    }
+
+    .faq-q {
+      font-weight: 600;
+      color: #0f172a;
+      margin-bottom: 0.15rem;
+      font-size: 1rem;
+    }
+
+    .faq-a {
+      font-size: 0.92rem;
+      color: #4b5563;
+      margin-top: 0.1rem;
+    }
+
+    .faq-a a {
+      color: #2563eb;
+      text-decoration: none;
+      font-weight: 500;
+      border-bottom: 1px solid #b9d1fb;
+    }
+
+    .faq-a a:hover {
+      color: #1d4ed8;
+    }
+
+    /* 底部链接区 */
+    .footer-links {
+      margin-top: 3.2rem;
+      padding-top: 1.4rem;
+      border-top: 1px solid #e2e8f0;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: baseline;
+      font-size: 0.9rem;
+      color: #64748b;
+    }
+
+    .footer-links .url-group {
+      display: flex;
+      gap: 1.2rem;
+      flex-wrap: wrap;
+    }
+
+    .footer-links a {
+      color: #334155;
+      text-decoration: none;
+      border-bottom: 1px solid #d4dae2;
+      padding-bottom: 1px;
+      transition: border-color 0.15s, color 0.15s;
+    }
+
+    .footer-links a:hover {
+      color: #0f172a;
+      border-color: #64748b;
+    }
+
+    .footer-links .main-link {
+      font-weight: 500;
+      color: #2563eb;
+      border-bottom: 1px solid #a9c5fa;
+    }
+
+    .footer-links .main-link:hover {
+      color: #1d4ed8;
+      border-color: #2563eb;
+    }
+
+    .footer-note {
+      margin-top: 0.8rem;
+      font-size: 0.85rem;
+      color: #94a3b8;
+    }
+
+    /* 响应式 */
+    @media (max-width: 640px) {
+      .container {
+        padding: 2rem 1.2rem 3.5rem;
+      }
+
+      .hero h1 {
+        font-size: 1.8rem;
+      }
+
+      .hero .sub {
+        font-size: 0.98rem;
+        padding-left: 0.8rem;
+      }
+
+      .grid-2col {
+        grid-template-columns: 1fr;
+        gap: 1.2rem;
+      }
+
+      .section-title {
+        font-size: 1.2rem;
+      }
+
+      .desc-paragraph {
+        padding: 1.2rem 1.2rem;
+      }
+
+      .footer-links {
+        flex-direction: column;
+        gap: 0.5rem;
+      }
+    }
+
+    @media (min-width: 641px) and (max-width: 880px) {
+      .container {
+        padding: 2.6rem 1.8rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <!-- Hero -->
+    <div class="hero">
+      <h1>比分网 · 赛事数据</h1>
+      <div class="sub">
+        面向体育比分查询场景，提供清晰、可回溯的赛果收录服务。
+        不渲染预测，不堆积广告，只做可靠的数据整理。
+      </div>
+    </div>
+
+    <!-- 优势区 -->
+    <h2 class="section-title">数据特点</h2>
+    <div class="grid-2col">
+      <div class="card">
+        <span class="tag">结构</span>
+        <h3>字段归一</h3>
+        <p>每场比分包含赛事名称、阶段、主客队、最终比分及关键节点，减少无关信息干扰。</p>
+      </div>
+      <div class="card">
+        <span class="tag">来源</span>
+        <h3>透明标注</h3>
+        <p>页面内说明数据参考范围，部分内容整合自公开赛事档案，可辅助自行核对。</p>
+      </div>
+      <div class="card">
+        <span class="tag">覆盖</span>
+        <h3>多类赛事</h3>
+        <p>主要覆盖足球、篮球主流联赛及杯赛，兼顾部分非热门项目的基础比分。</p>
+      </div>
+      <div class="card">
+        <span class="tag">体验</span>
+        <h3>轻量使用</h3>
+        <p>页面加载简洁，无需登录即可浏览历史比分，降低信息获取成本。</p>
+      </div>
+    </div>
+
+    <!-- 说明区：可信说明与站点介绍 -->
+    <h2 class="section-title">可信说明与使用场景</h2>
+    <div class="desc-paragraph">
+      <strong>比分网</strong> 并非实时数据直播平台，而是以收录和整理为主的静态信息站点。
+      每一组比分均经多来源比对后录入，并在页面中标记数据提取的参考日期或赛事轮次。
+      用户可将本站结果与官方赛事记录交叉验证，适用于赛果复盘、数据回顾、历史比对等轻研究场景。
+    </div>
+
+    <div class="desc-paragraph">
+      日常使用中，<a href="https://h5-scores.com">比分网</a> 可作为快速查询某项赛事最终结果的参考工具。
+      例如查阅某轮欧冠小组赛比分、某赛季 NBA 总决赛各场得分，或回顾近年国际友谊赛赛果。
+      所有内容仅供学习与个人参考，不构成任何投注建议或实时数据保证。
+    </div>
+
+    <!-- FAQ 摘要 -->
+    <h2 class="section-title">常见疑问摘要</h2>
+    <div class="faq-block">
+      <div class="faq-item">
+        <div class="faq-q">比分网的数据更新频率如何？</div>
+        <div class="faq-a">本站以已完结的赛事为主要收录对象，不追求实时推送。数据通常在比赛结束后 24 小时内完成整理并上线，遇到跨日或大型锦标赛可能稍有延迟。</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">如何确认比分的准确性？</div>
+        <div class="faq-a">每场比分均参照多家公开来源进行交叉核对，页面会附上数据参考日期。若发现明显不一致，可通过页面底部联系方式反馈，我们会在下一个更新周期内复核并修正。</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">站内包含广告或付费内容吗？</div>
+        <div class="faq-a">目前 <a href="https://h5-scores.com">比分网</a> 以信息整理为主，不包含商业广告位、会员订阅或隐藏付费模块。页面中可能出现的链接均为数据来源标注或站内导航。</div>
+      </div>
+    </div>
+
+    <!-- 底部链接 -->
+    <div class="footer-links">
+      <div class="url-group">
+        <a href="https://h5-scores.com" class="main-link">比分网</a>
+        <a href="#">关于收录</a>
+        <a href="#">数据参考</a>
+      </div>
+      <span>信息整理 · 仅供个人参考</span>
+      <div class="footer-note">
+        所有赛事结果均来自公开渠道，不保证绝对实时性
+      </div>
+    </div>
+
+    <!-- 隐式种子标识：仅用于结构变化，不显示 -->
+  </div>
+</body>
+</html>
