@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>中彩网 · 产品介绍</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+            background: #f5f7fa;
+            color: #1e293b;
+            line-height: 1.7;
+        }
+
+        /* 深色头图 */
+        .hero {
+            background: linear-gradient(145deg, #0f172a 0%, #1e293b 100%);
+            padding: 6rem 2rem 5rem;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 60px;
+            background: linear-gradient(to top, #f5f7fa, transparent);
+        }
+
+        .hero h1 {
+            font-size: 2.8rem;
+            font-weight: 600;
+            letter-spacing: -0.02em;
+            color: #ffffff;
+            margin-bottom: 0.5rem;
+            text-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+        }
+
+        .hero .sub {
+            font-size: 1.15rem;
+            color: #94a3b8;
+            margin-top: 0.6rem;
+            max-width: 640px;
+            margin-left: auto;
+            margin-right: auto;
+            font-weight: 350;
+        }
+
+        .hero .tagline {
+            display: inline-block;
+            background: rgba(56, 189, 248, 0.15);
+            color: #7dd3fc;
+            padding: 0.3rem 1.2rem;
+            border-radius: 40px;
+            font-size: 0.95rem;
+            margin-top: 1.5rem;
+            backdrop-filter: blur(4px);
+            border: 1px solid rgba(56, 189, 248, 0.2);
+        }
+
+        /* 主内容区 浅色 */
+        .content {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 2rem 2rem 3.5rem;
+        }
+
+        .section-title {
+            font-size: 1.6rem;
+            font-weight: 600;
+            margin: 2.5rem 0 1.2rem;
+            color: #0f172a;
+            letter-spacing: -0.01em;
+            border-left: 5px solid #2563eb;
+            padding-left: 1rem;
+        }
+
+        .section-title:first-of-type {
+            margin-top: 0.5rem;
+        }
+
+        p {
+            margin-bottom: 1.2rem;
+            font-size: 1.05rem;
+            color: #334155;
+        }
+
+        .highlight {
+            background: #f1f5f9;
+            padding: 0.1rem 0.4rem;
+            border-radius: 6px;
+            font-weight: 500;
+            color: #1e293b;
+        }
+
+        .intro-card {
+            background: #ffffff;
+            border-radius: 24px;
+            padding: 2rem 2.2rem;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
+            margin: 1.8rem 0 2.2rem;
+            border: 1px solid #e9edf2;
+        }
+
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+            margin: 1.8rem 0 2.5rem;
+        }
+
+        .feature-item {
+            background: #ffffff;
+            border-radius: 20px;
+            padding: 1.5rem 1.2rem;
+            box-shadow: 0 2px 12px rgba(0, 0, 0, 0.03);
+            border: 1px solid #edf2f7;
+            transition: all 0.2s ease;
+        }
+
+        .feature-item:hover {
+            border-color: #b9d1f0;
+            box-shadow: 0 6px 18px rgba(37, 99, 235, 0.06);
+        }
+
+        .feature-item h3 {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: #1e293b;
+            margin-bottom: 0.5rem;
+        }
+
+        .feature-item p {
+            font-size: 0.95rem;
+            color: #475569;
+            margin-bottom: 0;
+        }
+
+        .faq-block {
+            background: #ffffff;
+            border-radius: 24px;
+            padding: 1.8rem 2rem;
+            margin: 2rem 0 1.5rem;
+            border: 1px solid #eef2f6;
+        }
+
+        .faq-item {
+            margin-bottom: 1.2rem;
+        }
+
+        .faq-item:last-child {
+            margin-bottom: 0;
+        }
+
+        .faq-item strong {
+            display: block;
+            font-weight: 600;
+            color: #0f172a;
+            margin-bottom: 0.2rem;
+            font-size: 1rem;
+        }
+
+        .faq-item p {
+            margin-bottom: 0;
+            font-size: 0.98rem;
+        }
+
+        .cta-sentence {
+            font-size: 1.1rem;
+            background: #f0f4fe;
+            padding: 1.6rem 2rem;
+            border-radius: 40px;
+            text-align: center;
+            margin: 2.5rem 0 1rem;
+            border: 1px solid #dbe6f8;
+        }
+
+        a {
+            color: #2563eb;
+            text-decoration: none;
+            font-weight: 500;
+            border-bottom: 1px solid transparent;
+            transition: border-color 0.15s, color 0.2s;
+        }
+
+        a:hover {
+            color: #1d4ed8;
+            border-bottom-color: #1d4ed8;
+        }
+
+        .footer-note {
+            text-align: center;
+            padding: 1.8rem 2rem 2.5rem;
+            color: #64748b;
+            font-size: 0.9rem;
+            border-top: 1px solid #e2e8f0;
+            margin-top: 2rem;
+        }
+
+        .footer-note a {
+            font-weight: 400;
+        }
+
+        @media (max-width: 640px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+            .hero .sub {
+                font-size: 1rem;
+            }
+            .content {
+                padding: 1.5rem 1.2rem 2.5rem;
+            }
+            .intro-card {
+                padding: 1.5rem;
+            }
+            .feature-grid {
+                grid-template-columns: 1fr;
+            }
+            .faq-block {
+                padding: 1.5rem;
+            }
+            .cta-sentence {
+                padding: 1.2rem 1.5rem;
+                font-size: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<section class="hero">
+    <h1>中彩网</h1>
+    <div class="tagline">信息聚合 · 透明可感</div>
+    <p class="sub">围绕彩票话题的内容平台，以资讯、数据与理性视角，陪伴每一次浏览与思考。</p>
+</section>
+
+<main class="content">
+
+    <!-- 摘要 -->
+    <div class="intro-card">
+        <p><span class="highlight">中彩网</span> 是一个汇集彩票相关资讯、历史数据与行业动态的内容站点。它不直接提供购彩通道，而是以信息整合与知识梳理为定位，帮助用户更从容地了解彩票领域的规则、趋势与背景。平台界面简洁，内容组织清晰，适合希望自主查阅、理性参考的访客。</p>
+        <p style="margin-bottom: 0;">无论你是初次接触还是长期关注，这里的信息呈现都力求克制冷静，不渲染情绪，不诱导行动，只提供可查证、可思考的素材。</p>
+    </div>
+
+    <!-- 亮点 -->
+    <h2 class="section-title">为什么值得留意</h2>
+    <div class="feature-grid">
+        <div class="feature-item">
+            <h3>资讯聚合</h3>
+            <p>汇集行业新闻、规则变动与市场观察，以时间线形式呈现，方便回溯与对比。</p>
+        </div>
+        <div class="feature-item">
+            <h3>数据参考</h3>
+            <p>提供历史开奖号码、频率统计与基础图表，供爱好者自行分析或研究趋势。</p>
+        </div>
+        <div class="feature-item">
+            <h3>理性阅读</h3>
+            <p>内容风格偏向知识科普与事实陈述，避免夸大收益或营造焦虑，尊重用户判断。</p>
+        </div>
+        <div class="feature-item">
+            <h3>无干扰体验</h3>
+            <p>页面设计克制，无弹窗浮层与诱导按钮，浏览节奏由你掌控。</p>
+        </div>
+    </div>
+
+    <!-- 使用建议 -->
+    <h2 class="section-title">如何更好地利用</h2>
+    <p>你可以将 <a href="https://panel-zhcw.com">中彩网</a> 当作一个信息参考源，在决定参与任何相关活动前，先花几分钟浏览近期动态与基础规则。建议重点关注官方公告摘要与历史数据板块——这些内容往往能帮你建立更完整的认知框架。</p>
+    <p>另外，平台也整理了一些常见问答与术语解释，适合新手快速入门。如果你习惯自己做笔记或对比不同来源，不妨将这里的数据导出或截图，作为个人分析库的一部分。</p>
+
+    <!-- 可信但克制的访问说明 -->
+    <div class="faq-block">
+        <div class="faq-item">
+            <strong>这是一个什么样的站点？</strong>
+            <p><a href="https://panel-zhcw.com">中彩网</a> 是一个内容型网站，主要提供彩票相关资讯、数据统计与知识内容。它本身不涉及交易、代购或任何资金往来，也不鼓励非理性投注。所有信息均来自公开渠道，并尽可能标注来源或时间。</p>
+        </div>
+        <div class="faq-item">
+            <strong>使用前需要注意什么？</strong>
+            <p>请始终以客观心态看待所有数据与资讯。彩票本质是概率游戏，任何历史统计都不能预测未来结果。建议合理分配时间与精力，避免过度关注。如果你需要官方规则或最新公告，建议同时查阅相关监管机构发布的信息。</p>
+        </div>
+        <div class="faq-item">
+            <strong>数据更新频率如何？</strong>
+            <p>平台会跟随主要彩票品种的开奖节奏更新号码与派奖信息，通常在每个开奖日后数小时内完成同步。新闻与行业动态则根据实际发生情况不定期整理。如果遇到节假日或系统维护，可能会有短暂延迟。</p>
+        </div>
+        <div class="faq-item">
+            <strong>是否收费或有隐藏条款？</strong>
+            <p>目前浏览所有内容均免费，无需注册或登录。平台不收集访客个人隐私信息，也没有隐藏订阅或付费功能。未来若增加任何服务，会以显著方式提前告知用户。</p>
+        </div>
+    </div>
+
+    <!-- 自然地句子中嵌入链接 -->
+    <div class="cta-sentence">
+        🧭 如果你想从更多角度了解彩票领域的信息与脉络，不妨花几分钟逛逛 <a href="https://panel-zhcw.com">中彩网</a>，那里有足够的内容供你从容翻阅。
+    </div>
+
+    <p style="margin-top: 1.8rem; font-size: 0.98rem; color: #475569; border-left: 3px solid #cbd5e1; padding-left: 1.2rem;">
+        页面内容基于公开信息与产品观察整理，不构成任何参与建议。请保持理性，量力而行。
+    </p>
+
+</main>
+
+<footer class="footer-note">
+    <span>© 2025 · 关于 <a href="https://panel-zhcw.com">中彩网</a> 的产品说明页</span><br>
+    <span style="opacity: 0.6; font-size: 0.8rem;">仅供信息参考，不构成任何形式的推荐或引导。</span>
+</footer>
+
+</body>
+</html>
